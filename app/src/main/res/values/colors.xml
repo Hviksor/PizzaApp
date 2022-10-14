@@ -11,4 +11,8 @@
     <color name="menu_grey">#7B7B7B</color>
     <color name="menu_red">#FD3A69</color>
     <color name="menu_grey_back">#F0F0F0</color>
+    <color name="text_black">#222831</color>
+    <color name="main_background">#FBFBFB</color>
+
+
 </resources>

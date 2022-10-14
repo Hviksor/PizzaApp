@@ -25,30 +25,31 @@ class MainActivity : AppCompatActivity() {
     private fun initial() {
         with(binding) {
             viewPager.adapter = ViewPagerAdapter(this@MainActivity)
+            viewPager.isUserInputEnabled = false
             tableLayout.tabIconTint = null
             TabLayoutMediator(binding.tableLayout, binding.viewPager) { tab, pos ->
                 when (pos) {
                     0 -> {
                         tab.setIcon(R.drawable.ic_menu)
-                        tab.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_red))
-
+                        tab.text = "Меню"
                     }
 
                     1 -> {
                         tab.setIcon(R.drawable.ic_profile)
-                        tab.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_grey))
+                        tab.text = "Профиль"
                     }
                     else -> {
                         tab.setIcon(R.drawable.ic_basket)
-                        tab.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_grey))
+                        tab.text = "Меню"
                     }
 
                 }
 
             }.attach()
-            binding.tableLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+            binding.tableLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
                     tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_red))
+
                 }
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onTabReselected(tab: TabLayout.Tab?) {
-                    TODO("Not yet implemented")
+                    tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_red))
                 }
 
             })

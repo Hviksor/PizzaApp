@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".presentor.MainActivity">
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bNavView"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/menu_grey_back"-->
-<!--        app:itemIconTint="@drawable/bottom_nav_selector"-->
-<!--        app:labelVisibilityMode="unlabeled"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/bottom_main_menu" />-->
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -25,7 +15,9 @@
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.viewpager2.widget.ViewPager2>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tableLayout"
@@ -36,6 +28,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tabIndicatorHeight="0dp"
-        />
+        app:tabSelectedTextColor="@color/menu_red"
+        app:tabTextAppearance="@style/MyCustomTabTextAppearance"
+        app:tabTextColor="@color/menu_grey"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.hviksor.pizzaapp.presentor
 
 import android.os.Bundle
-import android.widget.TableLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.tabs.TabLayout
@@ -48,23 +47,18 @@ class MainActivity : AppCompatActivity() {
             }.attach()
             binding.tableLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {
-                    tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_red))
+                    tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.pizza_red))
 
                 }
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {
-                    tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_grey))
+                    tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.pizza_dark_grey))
                 }
 
                 override fun onTabReselected(tab: TabLayout.Tab?) {
-                    tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.menu_red))
+                    tab?.icon?.setTint(ContextCompat.getColor(this@MainActivity, R.color.pizza_red))
                 }
-
             })
-
-
         }
-
-
     }
 }

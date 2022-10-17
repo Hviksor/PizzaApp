@@ -23,14 +23,14 @@
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/menu_grey_back"
+        android:background="@color/pizza_grey_background_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tabIndicatorHeight="0dp"
-        app:tabSelectedTextColor="@color/menu_red"
+        app:tabSelectedTextColor="@color/pizza_red"
         app:tabTextAppearance="@style/MyCustomTabTextAppearance"
-        app:tabTextColor="@color/menu_grey"
+        app:tabTextColor="@color/pizza_dark_grey"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

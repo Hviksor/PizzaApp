@@ -1,6 +1,5 @@
 package com.hviksor.pizzaapp.presentor.screen.category
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
@@ -12,8 +11,8 @@ class CategoryAdapter : ListAdapter<CategoryItem, CategoryViewHolder>(CategoryIt
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val layout = when (viewType) {
-            VIEW_TYPE_ENABLED -> R.layout.category_item_enable
-            VIEW_TYPE_DISABLED -> R.layout.category_item_disable
+            VIEW_TYPE_ENABLED -> R.layout.item_category_enable
+            VIEW_TYPE_DISABLED -> R.layout.item_category_disable
             else -> throw RuntimeException("viewType is empty")
         }
         val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)

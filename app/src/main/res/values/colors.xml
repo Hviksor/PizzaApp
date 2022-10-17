@@ -13,6 +13,7 @@
     <color name="pizza_grey_background_bottom">#F0F0F0</color>
     <color name="pizza_text_black">#222831</color>
     <color name="pizza_text_grey">#C3C4C9</color>
+    <color name="pizza_text_desc_grey">#AAAAAD</color>
     <color name="pizza_pink">#f4ccd5</color>
     <color name="pizza_main_background">#FBFBFB</color>
 

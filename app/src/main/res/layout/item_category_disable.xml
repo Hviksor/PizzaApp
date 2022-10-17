@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/category_item_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

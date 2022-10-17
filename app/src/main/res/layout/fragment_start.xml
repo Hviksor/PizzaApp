@@ -89,6 +89,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/h_scroll_view"
         tools:itemCount="10"
-        tools:listitem="@layout/category_item_enable" />
+        tools:listitem="@layout/item_category_enable" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/products_rc_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:backgroundTint="#F3F5F9"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_product"
+        app:layout_constraintTop_toBottomOf="@+id/category_rc_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

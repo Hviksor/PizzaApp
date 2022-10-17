@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.hviksor.pizzaapp.databinding.FragmentStartBinding
 import com.hviksor.pizzaapp.domain.CategoryItem
 import com.hviksor.pizzaapp.presentor.screen.category.CategoryAdapter
@@ -37,7 +38,7 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         categoryRCView.adapter = categoryAdapter
-
+        categoryRCView.itemAnimator?.changeDuration = 0
         viewModel.categoryList.observe(viewLifecycleOwner) {
             categoryAdapter.submitList(it)
         }

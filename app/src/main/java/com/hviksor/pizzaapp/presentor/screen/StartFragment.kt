@@ -11,10 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hviksor.pizzaapp.databinding.FragmentStartBinding
 import com.hviksor.pizzaapp.domain.CategoryItem
 import com.hviksor.pizzaapp.presentor.screen.category.CategoryAdapter
+import com.hviksor.pizzaapp.presentor.screen.products.ProductAdapter
 
 class StartFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider(this)[PizzaViewModel::class.java]
+    }
+    private val productAdapter by lazy {
+        ProductAdapter()
     }
 
     private val categoryAdapter by lazy {
@@ -22,6 +26,9 @@ class StartFragment : Fragment() {
     }
     private val categoryRCView by lazy {
         binding.categoryRcView
+    }
+    private val productRCView by lazy {
+        binding.productsRcView
     }
     private var _binding: FragmentStartBinding? = null
     private val binding: FragmentStartBinding
@@ -37,12 +44,24 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoryRCView.adapter = categoryAdapter
-        categoryRCView.itemAnimator?.changeDuration = 0
+        initRCView()
+        enableViewModelFields()
+        shortCategoryClick()
+    }
+
+    private fun enableViewModelFields() {
         viewModel.categoryList.observe(viewLifecycleOwner) {
             categoryAdapter.submitList(it)
         }
-        shortCategoryClick()
+        viewModel.productList.observe(viewLifecycleOwner) {
+            productAdapter.submitList(it)
+        }
+    }
+
+    private fun initRCView() {
+        categoryRCView.adapter = categoryAdapter
+        categoryRCView.itemAnimator?.changeDuration = 0
+        productRCView.adapter = productAdapter
     }
 
     private fun shortCategoryClick() {

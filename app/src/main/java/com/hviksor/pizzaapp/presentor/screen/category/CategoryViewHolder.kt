@@ -1,10 +1,13 @@
 package com.hviksor.pizzaapp.presentor.screen.category
 
-import androidx.databinding.ViewDataBinding
+import android.view.View
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import com.hviksor.pizzaapp.R
 
 class CategoryViewHolder(
-    val binding: ViewDataBinding
-) : RecyclerView.ViewHolder(binding.root) {
+    itemView: View
+) : RecyclerView.ViewHolder(itemView) {
+    val btCategory = itemView.findViewById<Button>(R.id.category_item_button)
 
 }

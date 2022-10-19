@@ -8,5 +8,6 @@ interface PizzaRepository {
     fun getCategoryListUseCase(): LiveData<List<CategoryItem>>
     fun editCategoryItemUseCase(categoryItem: CategoryItem)
     fun getProductListUseCase(): LiveData<List<ProductItem>>
+    fun loadData()
 
 }

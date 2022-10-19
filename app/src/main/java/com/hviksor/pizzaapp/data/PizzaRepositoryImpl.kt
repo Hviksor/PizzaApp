@@ -6,7 +6,7 @@ import com.hviksor.pizzaapp.domain.CategoryItem
 import com.hviksor.pizzaapp.domain.PizzaRepository
 import com.hviksor.pizzaapp.domain.ProductItem
 
-object PizzaRepositoryImpl : PizzaRepository {
+class PizzaRepositoryImpl : PizzaRepository {
     private val categoryList = sortedSetOf<CategoryItem>({ o1, o2 -> o1.id.compareTo(o2.id) })
     private val categoryListLD = MutableLiveData<List<CategoryItem>>()
 
@@ -48,6 +48,10 @@ object PizzaRepositoryImpl : PizzaRepository {
 
     override fun getProductListUseCase(): LiveData<List<ProductItem>> {
         return productListLD
+    }
+
+    override fun loadData() {
+        TODO("Not yet implemented")
     }
 
     private fun updateCategoryList() {

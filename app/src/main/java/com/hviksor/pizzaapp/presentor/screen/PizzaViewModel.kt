@@ -1,16 +1,14 @@
 package com.hviksor.pizzaapp.presentor.screen
 
-import android.util.Log
-import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hviksor.pizzaapp.data.PizzaRepositoryImpl
 import com.hviksor.pizzaapp.data.network.GetWbeInform
 import com.hviksor.pizzaapp.domain.CategoryItem
-import com.hviksor.pizzaapp.domain.EditCategoryItemUseCase
-import com.hviksor.pizzaapp.domain.GetCategoryListUseCase
-import com.hviksor.pizzaapp.domain.GetProductItemListUseCase
+import com.hviksor.pizzaapp.domain.useCase.EditCategoryItemUseCase
+import com.hviksor.pizzaapp.domain.useCase.GetCategoryListUseCase
+import com.hviksor.pizzaapp.domain.useCase.GetProductItemListUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -24,7 +22,7 @@ class PizzaViewModel : ViewModel() {
         var doc: Document
         viewModelScope.launch(Dispatchers.IO) {
             val getWeb = GetWbeInform()
-            getWeb.getWeb()
+            getWeb.loadDataPizzaInfo()
         }
 //
 

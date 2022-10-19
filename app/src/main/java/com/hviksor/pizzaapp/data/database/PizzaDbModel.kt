@@ -8,6 +8,7 @@ data class PizzaDbModel(
     val title: String,
     val description: String,
     val price: String,
+    val url: String,
     @PrimaryKey
     val id: Int
 )

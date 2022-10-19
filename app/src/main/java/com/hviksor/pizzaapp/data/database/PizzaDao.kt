@@ -9,7 +9,7 @@ import androidx.room.Query
 @Dao
 interface PizzaDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertPizzaInfo(pizzaDbModel: PizzaDbModel)
+    fun insertPizzaInfo(list: ArrayList<PizzaDbModel>)
 
     @Query("SELECT * FROM pizza_product_info")
     fun getPizzaInfo(): LiveData<List<PizzaDbModel>>

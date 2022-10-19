@@ -6,11 +6,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.hviksor.pizzaapp.R
-import com.hviksor.pizzaapp.data.network.Jsoup
 import com.hviksor.pizzaapp.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy {

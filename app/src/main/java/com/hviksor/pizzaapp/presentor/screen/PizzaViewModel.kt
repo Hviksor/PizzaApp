@@ -6,6 +6,7 @@ import org.jsoup.nodes.Document
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hviksor.pizzaapp.data.PizzaRepositoryImpl
+import com.hviksor.pizzaapp.data.network.GetWbeInform
 import com.hviksor.pizzaapp.domain.CategoryItem
 import com.hviksor.pizzaapp.domain.EditCategoryItemUseCase
 import com.hviksor.pizzaapp.domain.GetCategoryListUseCase
@@ -22,10 +23,8 @@ class PizzaViewModel : ViewModel() {
     init {
         var doc: Document
         viewModelScope.launch(Dispatchers.IO) {
-            Log.e("jsoupp", "jsoupp")
-            doc = Jsoup.connect("https://dodopizza.ru/moscow/").get()
-
-            Log.e("jsoupp", doc.title())
+            val getWeb = GetWbeInform()
+            getWeb.getWeb()
         }
 //
 

@@ -7,28 +7,25 @@ import androidx.lifecycle.Transformations
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkManager
 import com.hviksor.pizzaapp.data.database.PizzaDataBase
-import com.hviksor.pizzaapp.data.database.PizzaDbModel
 import com.hviksor.pizzaapp.data.mapper.PizzaMapper
+import com.hviksor.pizzaapp.data.network.GetCategoryItem
 import com.hviksor.pizzaapp.data.workers.RefreshDataWorker
 import com.hviksor.pizzaapp.data.workers.RefreshDataWorker.Companion.WORKER_NAME
 import com.hviksor.pizzaapp.domain.CategoryItem
 import com.hviksor.pizzaapp.domain.PizzaInfoEntity
 import com.hviksor.pizzaapp.domain.PizzaRepository
+import java.util.*
 
 class PizzaRepositoryImpl(private val application: Application) : PizzaRepository {
-    private val categoryList = sortedSetOf<CategoryItem>({ o1, o2 -> o1.id.compareTo(o2.id) })
+    private var categoryList = TreeSet<CategoryItem>()
     private val categoryListLD = MutableLiveData<List<CategoryItem>>()
-
     private val coinDao = PizzaDataBase.getInstance(application).pizzaDao()
     private val mapper = PizzaMapper()
+    private val getCategory = GetCategoryItem()
 
 
     init {
-        categoryList.add(CategoryItem("Пицца", true, 1))
-        categoryList.add(CategoryItem("Комбо", false, 2))
-        categoryList.add(CategoryItem("Закуски", false, 3))
-        categoryList.add(CategoryItem("Дессерт", false, 4))
-        categoryList.add(CategoryItem("Напитки", false, 5))
+        categoryList = getCategory.addCategory()
         updateCategoryList()
     }
 

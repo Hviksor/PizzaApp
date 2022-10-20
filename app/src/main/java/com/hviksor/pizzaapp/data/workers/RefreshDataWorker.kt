@@ -8,7 +8,6 @@ import androidx.work.WorkerParameters
 import com.hviksor.pizzaapp.data.database.PizzaDataBase
 import com.hviksor.pizzaapp.data.mapper.PizzaMapper
 import com.hviksor.pizzaapp.data.network.GetWbeInform
-import kotlinx.coroutines.delay
 
 class RefreshDataWorker(appContext: Context, params: WorkerParameters) : CoroutineWorker(appContext, params) {
     private val dao = PizzaDataBase.getInstance(appContext).pizzaDao()
@@ -22,7 +21,7 @@ class RefreshDataWorker(appContext: Context, params: WorkerParameters) : Corouti
                 val pizzaInfoDbList = pizzaMapper.mapDtoToDb(pizzaInfoList)
                 dao.insertPizzaInfo(pizzaInfoDbList)
 
-            } catch (e: Exception) {
+            } catch (_: Exception) {
             }
         return Result.success()
     }

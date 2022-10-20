@@ -2,7 +2,6 @@ package com.hviksor.pizzaapp.domain.useCase
 
 import androidx.lifecycle.LiveData
 import com.hviksor.pizzaapp.data.PizzaRepositoryImpl
-import com.hviksor.pizzaapp.data.database.PizzaDbModel
 import com.hviksor.pizzaapp.domain.PizzaInfoEntity
 
 class GetProductItemListUseCase(private val repo: PizzaRepositoryImpl) {

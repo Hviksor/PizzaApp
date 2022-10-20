@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.hviksor.pizzaapp.R
-import com.hviksor.pizzaapp.data.database.PizzaDbModel
 import com.hviksor.pizzaapp.databinding.ItemProductBinding
 import com.hviksor.pizzaapp.domain.PizzaInfoEntity
 import com.squareup.picasso.Picasso

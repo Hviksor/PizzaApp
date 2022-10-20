@@ -1,8 +1,6 @@
 package com.hviksor.pizzaapp.domain
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.hviksor.pizzaapp.data.database.PizzaDbModel
 
 interface PizzaRepository {
 

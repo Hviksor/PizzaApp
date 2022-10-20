@@ -11,5 +11,6 @@
         android:layout_height="112dp"
         android:adjustViewBounds="true"
         android:scaleType="fitStart"
-        app:srcCompat="@drawable/banner_main" />
+        app:srcCompat="@drawable/banner_main"
+        android:contentDescription="@string/banner_image" />
 </LinearLayout>

@@ -1,15 +1,12 @@
 package com.hviksor.pizzaapp.presentor.screen
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
 import com.hviksor.pizzaapp.databinding.FragmentStartBinding
-import com.hviksor.pizzaapp.domain.CategoryItem
 import com.hviksor.pizzaapp.presentor.screen.category.CategoryAdapter
 import com.hviksor.pizzaapp.presentor.screen.products.ProductAdapter
 

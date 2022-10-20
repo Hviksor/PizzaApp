@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">PizzaApp</string>
+    <string name="third_fragment">Third Fragment</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="location_city">Москва</string>
+    <string name="adv_baner">Adv_Baner</string>
+    <string name="title_category">Category</string>
+    <string name="product_title">Ветчина и сыр</string>
+    <string name="product_description">Баварские калбаски, ветчина, пекантная пеперони, острая чоризо, томатный соус</string>
+    <string name="product_price">от 345 р</string>
+    <string name="product_image">product image</string>
+    <string name="banner_image">banner image</string>
 </resources>

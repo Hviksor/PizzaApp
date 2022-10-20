@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="pizza_dark_grey">#7B7B7B</color>
+    <color name="pizza_red">#FD3A69</color>
+    <color name="pizza_grey_background_bottom">#F0F0F0</color>
+    <color name="pizza_text_black">#222831</color>
+    <color name="pizza_text_grey">#C3C4C9</color>
+    <color name="pizza_text_desc_grey">#AAAAAD</color>
+    <color name="pizza_pink">#f4ccd5</color>
+    <color name="pizza_main_background">#FBFBFB</color>
+
+
 </resources>

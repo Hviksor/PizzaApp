@@ -12,7 +12,7 @@ interface PizzaDao {
     fun insertPizzaInfo(list: ArrayList<PizzaDbModel>)
 
     @Query("SELECT * FROM pizza_product_info")
-    fun getPizzaInfo(): LiveData<List<PizzaDbModel>>
+    fun getPizzaListInfo(): LiveData<List<PizzaDbModel>>
 
 
 }

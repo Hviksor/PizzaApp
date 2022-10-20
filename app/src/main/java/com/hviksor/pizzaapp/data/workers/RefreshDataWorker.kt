@@ -17,7 +17,6 @@ class RefreshDataWorker(appContext: Context, params: WorkerParameters) : Corouti
 
 
     override suspend fun doWork(): Result {
-        while (true) {
             try {
                 val pizzaInfoList = apiService.loadDataPizzaInfo()
                 val pizzaInfoDbList = pizzaMapper.mapDtoToDb(pizzaInfoList)
@@ -25,8 +24,7 @@ class RefreshDataWorker(appContext: Context, params: WorkerParameters) : Corouti
 
             } catch (e: Exception) {
             }
-            delay(5000)
-        }
+        return Result.success()
     }
     companion object {
         const val WORKER_NAME = "RefreshDataWorker"

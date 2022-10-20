@@ -1,17 +1,27 @@
 package com.hviksor.pizzaapp.data
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import androidx.work.ExistingWorkPolicy
+import androidx.work.WorkManager
+import com.hviksor.pizzaapp.data.database.PizzaDataBase
+import com.hviksor.pizzaapp.data.database.PizzaDbModel
+import com.hviksor.pizzaapp.data.mapper.PizzaMapper
+import com.hviksor.pizzaapp.data.workers.RefreshDataWorker
+import com.hviksor.pizzaapp.data.workers.RefreshDataWorker.Companion.WORKER_NAME
 import com.hviksor.pizzaapp.domain.CategoryItem
+import com.hviksor.pizzaapp.domain.PizzaInfoEntity
 import com.hviksor.pizzaapp.domain.PizzaRepository
-import com.hviksor.pizzaapp.domain.ProductItem
 
-class PizzaRepositoryImpl : PizzaRepository {
+class PizzaRepositoryImpl(private val application: Application) : PizzaRepository {
     private val categoryList = sortedSetOf<CategoryItem>({ o1, o2 -> o1.id.compareTo(o2.id) })
     private val categoryListLD = MutableLiveData<List<CategoryItem>>()
 
-    private val productList = sortedSetOf<ProductItem>({ o1, o2 -> o1.id.compareTo(o2.id) })
-    private val productListLD = MutableLiveData<List<ProductItem>>()
+    private val coinDao = PizzaDataBase.getInstance(application).pizzaDao()
+    private val mapper = PizzaMapper()
+
 
     init {
         categoryList.add(CategoryItem("Пицца", true, 1))
@@ -20,15 +30,6 @@ class PizzaRepositoryImpl : PizzaRepository {
         categoryList.add(CategoryItem("Дессерт", false, 4))
         categoryList.add(CategoryItem("Напитки", false, 5))
         updateCategoryList()
-        productList.add(ProductItem("Цыпленок карри", "Цыпленок, ананасы, соус карри, красный лук, сладкий перец, моцарелла, фирменный томатный соус", "от 439 ₽", 1))
-        productList.add(ProductItem("Мясной Микс", "Пастрами из индейки, острая чоризо, пикантная пепперони, бекон, моцарелла, фирменный томатный соус", "от 489 ₽", 2))
-        productList.add(ProductItem("Сырная", "Моцарелла, сыры чеддер и пармезан, фирменный соус альфредо", "от 299 ₽", 3))
-        productList.add(ProductItem("Ветчина и сыр", "Ветчина, моцарелла, фирменный соус альфредо", "от 329 ₽", 4))
-        productList.add(ProductItem("Пепперони фреш", "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус", "от 439 ₽", 5))
-        productList.add(ProductItem("Пепперони фреш", "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус", "от 439 ₽", 6))
-        productList.add(ProductItem("Пепперони фреш", "Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус", "от 439 ₽", 7))
-        updateProductList()
-
     }
 
 
@@ -46,20 +47,24 @@ class PizzaRepositoryImpl : PizzaRepository {
         updateCategoryList()
     }
 
-    override fun getProductListUseCase(): LiveData<List<ProductItem>> {
-        return productListLD
+    override fun getProductListUseCase(): LiveData<List<PizzaInfoEntity>> {
+        return Transformations.map(coinDao.getPizzaListInfo()) { list ->
+            list.map { mapper.mapDbToEntity(it) }
+        }
+
     }
 
     override fun loadData() {
-        TODO("Not yet implemented")
+        val workManager = WorkManager.getInstance(application)
+        workManager.enqueueUniqueWork(
+            WORKER_NAME,
+            ExistingWorkPolicy.REPLACE,
+            RefreshDataWorker.getOneTimeWorkRequest()
+        )
     }
 
     private fun updateCategoryList() {
         categoryListLD.value = categoryList.toList()
-    }
-
-    private fun updateProductList() {
-        productListLD.value = productList.toList()
     }
 
 

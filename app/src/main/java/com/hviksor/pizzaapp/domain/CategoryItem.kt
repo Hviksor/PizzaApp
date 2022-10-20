@@ -6,8 +6,4 @@ data class CategoryItem(
     val id: Int
 )
 
-{
-//    companion object {
-//        const val DEFAULT_ID = 0
-//    }
-}
+

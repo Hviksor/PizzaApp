@@ -4,6 +4,6 @@ data class PizzaInfoDto(
     val title: String,
     val description: String,
     val price: String,
-    val url: String,
-    val id: Int
+    val imgUrl: String,
+    val pizzaId: Int
 )

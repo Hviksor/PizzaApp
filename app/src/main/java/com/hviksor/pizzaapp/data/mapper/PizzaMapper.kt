@@ -2,6 +2,7 @@ package com.hviksor.pizzaapp.data.mapper
 
 import com.hviksor.pizzaapp.data.database.PizzaDbModel
 import com.hviksor.pizzaapp.data.network.PizzaInfoDto
+import com.hviksor.pizzaapp.domain.PizzaInfoEntity
 
 class PizzaMapper {
 
@@ -13,12 +14,23 @@ class PizzaMapper {
                     title = item.title,
                     description = item.description,
                     price = item.price,
-                    url = item.url,
-                    id = item.id
+                    imgUrl = item.imgUrl,
+                    pizzaId = item.pizzaId
+
                 )
             )
-
         }
         return pizzaDbModel
     }
+
+    fun mapDbToEntity(item: PizzaDbModel): PizzaInfoEntity {
+        return PizzaInfoEntity(
+            title = item.title,
+            description = item.description,
+            price = item.price,
+            imgUrl = item.imgUrl,
+            pizzaId = item.pizzaId
+        )
+    }
+
 }

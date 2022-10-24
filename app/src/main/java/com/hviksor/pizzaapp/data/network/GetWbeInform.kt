@@ -8,7 +8,7 @@ class GetWebInform : ApiService {
 
     override suspend fun loadDataPizzaInfo(): ArrayList<PizzaInfoDto> {
         try {
-            val doc = Jsoup.connect(PIZZA_URI).get()
+            val doc = Jsoup.connect(PIZZA_URI).get()  // В build.gradle есть Retrofit, но он здесь не используется. Не знаю что такое Jsoup, но Retrofit - общепринят. 
             val pizzaCatalog = doc.getElementsByAttributeValue("class", CATALOG)
             println(pizzaCatalog.size)
             var pizzaId = DEFAULT_PIZZA_ID

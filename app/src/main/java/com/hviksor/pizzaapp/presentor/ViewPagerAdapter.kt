@@ -20,4 +20,7 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
 
         }
     }
+    
+    // Красивее вместо хардкода значений 0,1 и кол-ва 3 использовать enum class FragmentType ( MENU, PROFILE, CARD )
+    // тогда 3 = FragmentType.values().size и return when (FragmentType.values()[position]){MENU -> MenuFragment() .... }
 }

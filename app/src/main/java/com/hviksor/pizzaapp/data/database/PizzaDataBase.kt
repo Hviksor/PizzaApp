@@ -23,7 +23,7 @@ abstract class PizzaDataBase : RoomDatabase() {
                 INSTANCE?.let {
                     return it
                 }
-                    val db = Room.databaseBuilder(context, PizzaDataBase::class.java, DB_NAME)
+                    val db = Room.databaseBuilder(context, PizzaDataBase::class.java, DB_NAME) // Лучше эти 3 строки создания БД вынести в отдельную функцию, разделить от логики синлтона
                     .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = db

@@ -9,7 +9,7 @@ import com.hviksor.pizzaapp.data.database.PizzaDataBase
 import com.hviksor.pizzaapp.data.mapper.PizzaMapper
 import com.hviksor.pizzaapp.data.network.GetWbeInform
 
-class RefreshDataWorker(appContext: Context, params: WorkerParameters) : CoroutineWorker(appContext, params) {
+class RefreshDataWorker(appContext: Context, params: WorkerParameters) : CoroutineWorker(appContext, params) { // Использование Worker не обосновано и черезмерно
     private val dao = PizzaDataBase.getInstance(appContext).pizzaDao()
     private val pizzaMapper = PizzaMapper()
     private val apiService = GetWbeInform()

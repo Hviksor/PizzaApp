@@ -10,7 +10,7 @@ import com.hviksor.pizzaapp.databinding.FragmentStartBinding
 import com.hviksor.pizzaapp.presentor.screen.category.CategoryAdapter
 import com.hviksor.pizzaapp.presentor.screen.products.ProductAdapter
 
-class StartFragment : Fragment() {
+class MenuFragment : Fragment() { // Названия фрагментов должно соответствовать их содержанию
     private val viewModel by lazy {
         ViewModelProvider(this)[PizzaViewModel::class.java]
     }

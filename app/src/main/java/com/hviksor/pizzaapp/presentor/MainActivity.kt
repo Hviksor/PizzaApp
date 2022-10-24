@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     else -> {
                         tab.setIcon(R.drawable.ic_basket)
-                        tab.text = "Меню"
+                        tab.text = "Корзина"
                     }
 
                 }

@@ -1,4 +1,4 @@
-package com.hviksor.pizzaapp.presentor
+package com.hviksor.pizzaapp.presentor // Слой вроде должен называться presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -53,7 +53,9 @@ class PizzaRepositoryImpl(private val application: Application) : PizzaRepositor
 
     override fun loadData() {
         val workManager = WorkManager.getInstance(application)
-        workManager.enqueueUniqueWork(
+        workManager.enqueueUniqueWork(// Ощущение что здесь происходит какая-то магия. Как было бы прозрачней: из domain-слоя (UseCase) вызывается loadData() репозитория, 
+            // в котором возвращаются данные. UseCase сохраняет эти данные в Room (на будущее, вдруг не будет соединения) и эти же данные отдает в presentation - слой.
+            // По заданию - данные должны получатся от сервера, а Offline-режим - на  случай если нет сети
             WORKER_NAME,
             ExistingWorkPolicy.REPLACE,
             RefreshDataWorker.getOneTimeWorkRequest()

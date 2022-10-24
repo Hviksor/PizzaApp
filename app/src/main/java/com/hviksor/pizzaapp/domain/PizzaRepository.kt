@@ -1,4 +1,4 @@
-package com.hviksor.pizzaapp.domain
+package com.hviksor.pizzaapp.domain // Интерфейс Repository вроде не должен в слое domain лежать, а в слое data
 
 import androidx.lifecycle.LiveData
 

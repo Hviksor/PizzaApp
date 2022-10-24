@@ -5,7 +5,7 @@ import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.hviksor.pizzaapp.R
 
-class CategoryViewHolder(
+class CategoryViewHolder( // ViewHolder удобно делать вложенным классом в CategoryAdapter ( private inner class ViewHolder)
     itemView: View
 ) : RecyclerView.ViewHolder(itemView) {
     val btCategory = itemView.findViewById<Button>(R.id.category_item_button)

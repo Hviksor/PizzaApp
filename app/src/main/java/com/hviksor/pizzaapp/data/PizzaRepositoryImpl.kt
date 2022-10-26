@@ -13,7 +13,6 @@ import com.hviksor.pizzaapp.data.workers.RefreshDataWorker
 import com.hviksor.pizzaapp.data.workers.RefreshDataWorker.Companion.WORKER_NAME
 import com.hviksor.pizzaapp.domain.CategoryItem
 import com.hviksor.pizzaapp.domain.PizzaInfoEntity
-import com.hviksor.pizzaapp.domain.PizzaRepository
 import java.util.*
 
 class PizzaRepositoryImpl(private val application: Application) : PizzaRepository {

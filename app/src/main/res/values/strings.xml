@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">PizzaApp</string>
-    <string name="third_fragment">Third Fragment</string>
-    <string name="second_fragment">Second Fragment</string>
+    <string name="third_fragment">Card Fragment</string>
+    <string name="second_fragment">Profile Fragment</string>
     <string name="location_city">Москва</string>
-    <string name="adv_baner">Adv_Baner</string>
+    <string name="adv_banner">Adv_Banner</string>
     <string name="title_category">Category</string>
     <string name="product_title">Ветчина и сыр</string>
     <string name="product_description">Баварские калбаски, ветчина, пекантная пеперони, острая чоризо, томатный соус</string>

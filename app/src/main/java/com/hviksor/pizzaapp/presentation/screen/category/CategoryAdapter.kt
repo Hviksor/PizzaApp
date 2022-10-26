@@ -1,12 +1,15 @@
-package com.hviksor.pizzaapp.presentor.screen.category
+package com.hviksor.pizzaapp.presentation.screen.category
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.hviksor.pizzaapp.R
 import com.hviksor.pizzaapp.domain.CategoryItem
 
-class CategoryAdapter : ListAdapter<CategoryItem, CategoryViewHolder>(CategoryItemCallBack()) {
+class CategoryAdapter : ListAdapter<CategoryItem, CategoryAdapter.CategoryViewHolder>(CategoryItemCallBack()) {
     var categoryItemClick: ((CategoryItem) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
@@ -39,6 +42,12 @@ class CategoryAdapter : ListAdapter<CategoryItem, CategoryViewHolder>(CategoryIt
     companion object {
         const val VIEW_TYPE_ENABLED = 1
         const val VIEW_TYPE_DISABLED = 0
+    }
+
+    class CategoryViewHolder(
+        itemView: View
+    ) : RecyclerView.ViewHolder(itemView) {
+        val btCategory = itemView.findViewById<Button>(R.id.category_item_button)
     }
 
 }

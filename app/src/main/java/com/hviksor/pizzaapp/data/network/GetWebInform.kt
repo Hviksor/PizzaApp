@@ -3,7 +3,7 @@ package com.hviksor.pizzaapp.data.network
 import org.jsoup.Jsoup
 
 
-class GetWbeInform : ApiService {
+class GetWebInform : ApiService {
     private var lisPizzaInfo = ArrayList<PizzaInfoDto>()
 
     override suspend fun loadDataPizzaInfo(): ArrayList<PizzaInfoDto> {

@@ -1,4 +1,4 @@
-package com.hviksor.pizzaapp.presentor.screen
+package com.hviksor.pizzaapp.presentation.screen
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

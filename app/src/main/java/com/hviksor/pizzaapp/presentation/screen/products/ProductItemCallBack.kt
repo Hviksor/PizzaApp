@@ -1,4 +1,4 @@
-package com.hviksor.pizzaapp.presentor.screen.products
+package com.hviksor.pizzaapp.presentation.screen.products
 
 import androidx.recyclerview.widget.DiffUtil
 import com.hviksor.pizzaapp.domain.PizzaInfoEntity

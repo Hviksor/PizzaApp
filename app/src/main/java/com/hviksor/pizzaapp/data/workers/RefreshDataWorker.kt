@@ -7,12 +7,12 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkerParameters
 import com.hviksor.pizzaapp.data.database.PizzaDataBase
 import com.hviksor.pizzaapp.data.mapper.PizzaMapper
-import com.hviksor.pizzaapp.data.network.GetWbeInform
+import com.hviksor.pizzaapp.data.network.GetWebInform
 
 class RefreshDataWorker(appContext: Context, params: WorkerParameters) : CoroutineWorker(appContext, params) {
     private val dao = PizzaDataBase.getInstance(appContext).pizzaDao()
     private val pizzaMapper = PizzaMapper()
-    private val apiService = GetWbeInform()
+    private val apiService = GetWebInform()
 
 
     override suspend fun doWork(): Result {

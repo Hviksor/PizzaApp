@@ -1,6 +1,8 @@
-package com.hviksor.pizzaapp.domain
+package com.hviksor.pizzaapp.data
 
 import androidx.lifecycle.LiveData
+import com.hviksor.pizzaapp.domain.CategoryItem
+import com.hviksor.pizzaapp.domain.PizzaInfoEntity
 
 interface PizzaRepository {
 

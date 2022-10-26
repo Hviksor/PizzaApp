@@ -1,4 +1,4 @@
-package com.hviksor.pizzaapp.presentor.screen.category
+package com.hviksor.pizzaapp.presentation.screen.category
 
 import com.hviksor.pizzaapp.domain.CategoryItem
 import androidx.recyclerview.widget.DiffUtil

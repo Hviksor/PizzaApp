@@ -1,4 +1,4 @@
-package com.hviksor.pizzaapp.presentor.screen
+package com.hviksor.pizzaapp.presentation.screen
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.hviksor.pizzaapp.databinding.FragmentStartBinding
-import com.hviksor.pizzaapp.presentor.screen.category.CategoryAdapter
-import com.hviksor.pizzaapp.presentor.screen.products.ProductAdapter
+import com.hviksor.pizzaapp.databinding.FragmentMenuBinding
+import com.hviksor.pizzaapp.presentation.screen.category.CategoryAdapter
+import com.hviksor.pizzaapp.presentation.screen.products.ProductAdapter
 
-class StartFragment : Fragment() {
+class MenuFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider(this)[PizzaViewModel::class.java]
     }
@@ -27,15 +27,15 @@ class StartFragment : Fragment() {
     private val productRCView by lazy {
         binding.productsRcView
     }
-    private var _binding: FragmentStartBinding? = null
-    private val binding: FragmentStartBinding
+    private var _binding: FragmentMenuBinding? = null
+    private val binding: FragmentMenuBinding
         get() = _binding ?: throw RuntimeException("FragmentDetailBinding == null")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentStartBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentMenuBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 

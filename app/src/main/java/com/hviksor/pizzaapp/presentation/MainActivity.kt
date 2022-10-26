@@ -1,4 +1,4 @@
-package com.hviksor.pizzaapp.presentor
+package com.hviksor.pizzaapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     else -> {
                         tab.setIcon(R.drawable.ic_basket)
-                        tab.text = "Меню"
+                        tab.text = "Корзина"
                     }
 
                 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/pizza_main_background"
     android:orientation="vertical"
-    tools:context=".presentor.screen.StartFragment">
+    tools:context=".presentation.screen.MenuFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -86,7 +86,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="112dp"
                                 android:adjustViewBounds="true"
-                                android:contentDescription="@string/adv_baner"
+                                android:contentDescription="@string/adv_banner"
                                 android:scaleType="fitStart"
                                 app:srcCompat="@drawable/banner_main" />
 
@@ -95,21 +95,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="112dp"
                                 android:adjustViewBounds="true"
-                                android:contentDescription="@string/adv_baner"
+                                android:contentDescription="@string/adv_banner"
                                 app:srcCompat="@drawable/banner_" />
                             <ImageView
                                 android:id="@+id/gallery_iv3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="112dp"
                                 android:adjustViewBounds="true"
-                                android:contentDescription="@string/adv_baner"
+                                android:contentDescription="@string/adv_banner"
                                 app:srcCompat="@drawable/banner_" />
                             <ImageView
                                 android:id="@+id/gallery_iv4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="112dp"
                                 android:adjustViewBounds="true"
-                                android:contentDescription="@string/adv_baner"
+                                android:contentDescription="@string/adv_banner"
                                 app:srcCompat="@drawable/banner_" />
 
                         </LinearLayout>

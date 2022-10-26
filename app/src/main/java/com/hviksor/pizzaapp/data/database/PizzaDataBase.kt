@@ -23,13 +23,18 @@ abstract class PizzaDataBase : RoomDatabase() {
                 INSTANCE?.let {
                     return it
                 }
-                    val db = Room.databaseBuilder(context, PizzaDataBase::class.java, DB_NAME)
-                    .fallbackToDestructiveMigration()
-                    .build()
+                val db = createDb(context)
                 INSTANCE = db
                 return db
             }
 
+        }
+
+        private fun createDb(context: Context): PizzaDataBase {
+            val db = Room.databaseBuilder(context, PizzaDataBase::class.java, DB_NAME)
+                .fallbackToDestructiveMigration()
+                .build()
+            return db
         }
 
 

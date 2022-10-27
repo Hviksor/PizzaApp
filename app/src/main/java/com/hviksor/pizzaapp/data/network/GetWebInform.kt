@@ -14,6 +14,7 @@ class GetWebInform : ApiService {
             var pizzaId = DEFAULT_PIZZA_ID
             for (item in pizzaCatalog) {
                 val imgUrl = item.select(SELECT_URL).attr(SELECT_URL_ATR)
+
                 val description = item.select(SELECT_DESCRIPTION).text()
                 val price = item.select(SELECT_PRICE).text()
                 val title = item.select(SELECT_TITLE).text()

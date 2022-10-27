@@ -1,6 +1,7 @@
 package com.hviksor.pizzaapp.data.workers
 
 import android.content.Context
+import android.util.Log
 import androidx.work.Constraints
 import androidx.work.CoroutineWorker
 import androidx.work.OneTimeWorkRequestBuilder
@@ -30,14 +31,8 @@ class RefreshDataWorker(appContext: Context, params: WorkerParameters) : Corouti
 
         fun getOneTimeWorkRequest() =
             OneTimeWorkRequestBuilder<RefreshDataWorker>()
-                .setConstraints(getConstraint())
                 .build()
 
-        private fun getConstraint(): Constraints {
-            return Constraints.Builder()
-                .setRequiresCharging(true)
-                .build()
-        }
 
     }
 }
